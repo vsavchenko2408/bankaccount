@@ -1,4 +1,5 @@
 #include <iostream>
+#include <deque>
 #include "account.h"
 
 size_t hello()
@@ -8,40 +9,45 @@ size_t hello()
               << std::endl;
     std::cout << "\tTo create account enter 1: \n";
     std::cout << "\tTo find account enter 2: \n";
+    std::cout << "\tTo see amount accounts enter 3: \n";
     std::cout << "\tTo exit enter 0: \t";
     std::cin >> choise;
 
     return choise;
 }
+
 int main()
 {
     size_t choise = hello();
-    do
+    std::deque<Account> all_accounts;
+    while (choise != 0)
     {
-
         switch (choise)
         {
         case 1:
         {
-            Account ac();
+            all_accounts.emplace_back(Account());
+            hello();
             break;
         }
         case 2:
         {
-            Account find_acc();
+            // Account find_acc();
+            hello();
             break;
         }
         case 0:
         {
-            std::exit(0);
+            hello();
         }
         default:
         {
             std::cerr << "Wrong choise!";
+            hello();
             break;
         }
         }
-    } while (choise != 0);
+    }
 
 #ifdef WIN32
     system("pause");
