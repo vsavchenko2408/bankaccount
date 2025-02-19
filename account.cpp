@@ -1,8 +1,17 @@
 #include "account.h"
 uint32_t Account::ID = 0;
-//Account::Account() : m_money(0), m_firstname("John"), m_lastname("Doe"), m_age(12) { ID++; }
+Account::Account() : m_money(0), m_firstname("John"), m_lastname("Doe"), m_age(12)
+{
+    ID++;
+    std::cout << "Enter first name: ";
+    std::cin >> m_firstname;
+    std::cout << "Enter last name: ";
+    std::cin >> m_lastname;
+    std::cout << "Enter age: ";
+    std::cin >> m_age;
+}
 
-Account::Account(double money, std::string firstname, std::string lastname, int8_t age) { ID++; }
+Account::Account(double money, std::string firstname, std::string lastname, int8_t age) : m_money(money), m_firstname(firstname), m_lastname(lastname), m_age(age) { ID++; }
 
 void Account::add_money(double addmoney)
 {

@@ -11,7 +11,7 @@ class Account
     static uint32_t ID;
 
 public:
-    Account() = delete;
+    Account();
     Account(double money, std::string firstname, std::string lastname, int8_t age);
     void add_money(double addmoney);
     bool withdraw_money(double wdmoney); // bool for confirm operation
