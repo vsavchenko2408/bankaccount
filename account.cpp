@@ -1,5 +1,10 @@
 #include "account.h"
+#ifdef WIN32
 uint32_t Account::ID = 0;
+#endif
+#ifdef unix
+unsigned long int Account::ID = 0;
+#endif
 Account::Account() : m_money(0), m_firstname("John"), m_lastname("Doe"), m_age(12)
 {
     ID++;

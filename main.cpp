@@ -14,14 +14,23 @@ int main()
         /*
         if (choise == 1)
         {
+#ifdef WIN32
+    system("cls");
+#endif
             all_accounts.emplace_back(Account());
         }
         if (choise == 2)
         {
+#ifdef WIN32
+    system("cls");
+#endif
             find_account(); // need realize
         }
         if (choise == 3)
         {
+#ifdef WIN32
+    system("cls");
+#endif
             std::cout << all_accounts.size() << std::endl; // or maybe show last ID
         }
             */
@@ -32,6 +41,9 @@ int main()
 #ifdef WIN32
             system("cls");
 #endif
+#ifdef unix
+            system("clear");
+#endif
             all_accounts.emplace_back(Account());
             break;
         }
@@ -40,6 +52,9 @@ int main()
 #ifdef WIN32
             system("cls");
 #endif
+#ifdef unix
+            system("clear");
+#endif
             find_account(); // need realize
             break;
         }
@@ -47,6 +62,9 @@ int main()
         {
 #ifdef WIN32
             system("cls");
+#endif
+#ifdef unix
+            system("clear");
 #endif
             std::cout << all_accounts.size() << std::endl; // or maybe show last ID
             break;
@@ -76,4 +94,5 @@ short hello()
 Account &find_account()
 {
     // need realize
+    // return ;
 }

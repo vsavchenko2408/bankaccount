@@ -8,7 +8,12 @@ class Account
     std::string m_firstname;
     std::string m_lastname;
     int8_t m_age;
+#ifdef WIN32
     static uint32_t ID;
+#endif
+#ifdef unix
+    static unsigned long int ID;
+#endif
 
 public:
     Account();
