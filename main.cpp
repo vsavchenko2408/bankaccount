@@ -12,29 +12,6 @@ int main()
     do
     {
         choise = hello();
-        /*
-        if (choise == 1)
-        {
-#ifdef WIN32
-    system("cls");
-#endif
-            all_accounts.emplace_back(Account());
-        }
-        if (choise == 2)
-        {
-#ifdef WIN32
-    system("cls");
-#endif
-            find_account(); // need realize
-        }
-        if (choise == 3)
-        {
-#ifdef WIN32
-    system("cls");
-#endif
-            std::cout << all_accounts.size() << std::endl; // or maybe show last ID
-        }
-            */
         switch (choise)
         {
         case 1:
