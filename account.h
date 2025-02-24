@@ -21,6 +21,11 @@ public:
     void add_money(double addmoney);
     bool withdraw_money(double wdmoney); // bool for confirm operation
     void show_info();
+    friend std::ostream &operator<<(std::ostream &os, const Account &acc)
+    {
+        os << acc.ID << " " << acc.m_firstname << " " << acc.m_lastname << " " << acc.m_age << " " << acc.m_money << std::endl;
+        return os;
+    }
 };
 
 #endif

@@ -1,7 +1,8 @@
 #include <iostream>
 #include <deque>
 #include "account.h"
-
+#include <fstream>
+bool record_to_file(Account &obj);
 short hello();
 Account &find_account();
 int main()
@@ -44,7 +45,9 @@ int main()
 #ifdef unix
             system("clear");
 #endif
-            all_accounts.emplace_back(Account());
+            Account obj = Account();
+            all_accounts.emplace_back(obj);
+            record_to_file(obj);
             break;
         }
         case 2:
@@ -80,6 +83,12 @@ int main()
 
 short hello()
 {
+#ifdef WIN32
+    system("cls");
+#endif
+#ifdef unix
+    system("clear");
+#endif
     short choise = 0;
     std::cout << "\t\t\tProgram Bank Account!\n\n"
               << std::endl;
@@ -95,4 +104,19 @@ Account &find_account()
 {
     // need realize
     // return ;
+}
+
+bool record_to_file(Account &obj)
+{
+    std::fstream fs("Accounts.txt", std::ios_base::app);
+
+    if (fs.is_open())
+    {
+        fs << obj;
+    }
+    else
+    {
+        std::cerr << "File didn't open!" << std::endl;
+    }
+    fs.close();
 }
